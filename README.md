@@ -23,7 +23,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/sergii-moroz/four-card-feature-section)
+- Solution URL: [GitHub](https://github.com/sergii-moroz/time-tacking-dashboard)
 
 ## My process
 
