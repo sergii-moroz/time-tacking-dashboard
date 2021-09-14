@@ -1,0 +1,11 @@
+@media screen and (min-width: 960px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: 31% 31% 31%;
+    }
+
+    .menu-card {
+        grid-column: 1 / span 3;
+    }
+}

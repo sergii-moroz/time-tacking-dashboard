@@ -1,0 +1,29 @@
+@media screen and (min-width: 570px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: 48% 48%;
+    }
+
+    .menu-card {
+        grid-column: 1 / span 2;
+
+        .card-report {
+            gap: 3rem;
+        }
+    }
+
+    .regular-card {
+        .property-card {
+            .row-2 {
+                flex-direction: column;
+                align-items: flex-start;
+
+                .hours {
+                    font-size: 3rem;
+                }
+            }
+
+        }
+    }
+}

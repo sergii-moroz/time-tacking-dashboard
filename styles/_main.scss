@@ -1,0 +1,223 @@
+body {
+    background-color: $very-dark-blue;
+    //I leave background white for better video contrast
+}
+
+.container {
+    //border: 1px solid red; // temporary
+    width: 88%;
+    margin: 2rem auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2.2rem;
+}
+
+.menu-card {
+    background-color: $dark-blue;
+    border-radius: 1.6rem;
+    width: 100%;
+
+    .card-report {
+        background-color: $blue;
+        border-radius: 1.6rem;
+        padding: 3rem;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1.8rem;
+
+        img {
+            width: 26%;
+            max-width: 130px;
+            border: 3px solid white;
+            border-radius: 50%;
+        }
+
+        .report {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0.4rem;
+
+            p {
+                color: $pale-blue;
+                font-size: 1.5rem;
+            }
+
+            .name {
+                color: white;
+                font-size: 2.4rem;
+                font-weight: 300;
+            }
+        }
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2.5rem;
+
+        //design isn't really symmetrical
+
+        .menu-link {
+            color: $desaturated-blue;
+            font-size: 1.8rem;
+            cursor: pointer;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        .menu-active {
+            color: white;
+        }
+    }
+}
+
+.regular-card {
+    //border: 1px solid red; //temporary
+    width: 100%;
+    border-radius: 1.6rem;
+    background-repeat: no-repeat;
+    background-position: 92% -1rem;
+
+    .property-card {
+        position: relative;
+        background-color: $dark-blue;
+        margin-top: 4rem;
+        border-radius: 1.6rem;
+        padding: 2.5rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+
+        &:hover {
+            background-color: $card-hover;
+        }
+
+        .row {
+            //border: 1px solid white; //temporary
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            .title {
+                color: white;
+                font-size: 1.8rem;
+                font-weight: 500;
+                z-index: 98;
+            }
+
+            .points {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    .point {
+                        background-color: white;
+                    }
+                }
+
+                /* 
+                it is not possible to have hover effect on child element (points) 
+                and don't have it on parent element (Card).
+	            You should use or JS or some ugly css tricks.
+                I try second variant.
+                */
+
+                &:before {
+                    content: '';
+                    background-color: pink; //temporary
+                    position: absolute;
+                    left: 0; 
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    //opacity: 0.5; //temporary
+                    border-radius: 1.6rem;
+                    display: none;
+                    z-index: 1;
+                }
+
+                &:hover::before {
+                    background-color: $dark-blue;
+                    display: block;
+                }
+                
+                .point {
+                    background-color: $pale-blue;
+                    width: 0.4rem;
+                    height: 0.4rem;
+                    border-radius: 50%;
+                    margin: 0.2rem;
+                    z-index: 99;
+                }
+            }
+        }
+
+        .row-2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            z-index: 97;
+
+            .hours {
+                color: white;
+                font-size: 3rem;
+                font-weight: 300;
+            }
+
+            .description {
+                color: $pale-blue;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+}
+
+.work {
+    background-color: $work;
+    background-image: url(../images/icon-work.svg);
+}
+
+.play {
+    background-color: $play;
+    background-image: url(../images/icon-play.svg);
+}
+
+.study {
+    background-color: $study;
+    background-image: url(../images/icon-study.svg);
+}
+
+.exercise {
+    background-color: $exercise;
+    background-image: url(../images/icon-exercise.svg);
+}
+
+.social {
+    background-color: $social;
+    background-image: url(../images/icon-social.svg);
+}
+
+.selfcare {
+    background-color: $selfcare;
+    background-image: url(../images/icon-self-care.svg);
+}

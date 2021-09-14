@@ -1,0 +1,336 @@
+body {
+    background-color: $very-dark-blue;
+}
+
+.container {
+    width: 88%;
+    //background-color: pink;
+    margin: 2rem auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2rem;
+}
+
+.menu-card {
+    background-color: $dark-blue;
+    border-radius: 1.6rem;
+    width: 100%;
+
+    .card-report {
+        background-color: $blue;
+        border-radius: 1.6rem;
+        padding: 3rem;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1.8rem;
+
+        img {
+            width: 26%;
+            max-width: 130px;
+            border: 3px solid white;
+            border-radius: 50%;
+        }
+
+        .report {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0.4rem;
+
+            p {
+                color: $pale-blue;
+                font-size: 1.5rem;
+            }
+
+            .name {
+                color: white;
+                font-size: 2.34rem;
+                font-weight: 300;
+            }
+        }
+
+    }
+
+    .menu {
+        padding: 2.6rem 1.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        .menu-link {
+            color: $desaturated-blue;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: all 0.5s ease-out;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        .menu-active {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+    }
+}
+
+
+.regular-card {
+    width: 100%;
+    border-radius: 1.6rem;
+    background-repeat: no-repeat;
+    background-position: 92% -1rem;
+
+    .property-card {
+        position: relative;
+        margin-top: 4rem;
+        background-color: $dark-blue;
+        border-radius: 1.6rem;
+        padding: 2.7rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;   
+
+        &:hover {
+            background-color: $desaturated-blue;
+        }
+
+        .row {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+
+            .title {
+                color: white;
+                font-size: 1.8rem;
+                font-weight: 500;
+                z-index: 97;
+            }
+
+            .points {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                
+
+                &:hover {
+                    .point {
+                        background-color: white;
+                        
+                    }
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0px;
+                    right: 0;
+                    bottom: 0;
+                    background-color: pink;
+                    //opacity: 0.5;
+                    border-radius: 1.6rem;
+                    display: none;
+                    z-index: 1;
+
+                }
+
+                &:hover::before {
+                    background-color: $dark-blue; //red
+                    display: block;
+                }
+            }
+
+            .point {
+                background-color: $pale-blue;
+                width: 0.4rem;
+                height: 0.4rem;
+                border-radius: 50%;
+                margin: 0.2rem;
+                z-index: 99;
+                
+            }
+        }
+
+        .row-2 {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 98;
+
+            .hours {
+                color: white;
+                font-size: 3rem;
+                font-weight: 300;
+            }
+
+            .description {
+                color: $pale-blue;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+.work {
+    background-color: $work;
+    background-image: url("../images/icon-work.svg");
+}
+
+.play {
+    background-color: $play;
+    background-image: url("../images/icon-play.svg");
+}
+
+.study {
+    background-color: $study;
+    background-image: url("../images/icon-study.svg");
+}
+
+.exercise {
+    background-color: $exercise;
+    background-image: url("../images/icon-exercise.svg");
+}
+
+.social {
+    background-color: $social;
+    background-image: url("../images/icon-social.svg");
+}
+
+.selfcare {
+    background-color: $selfcare;
+    background-image: url("../images/icon-self-care.svg");
+}
+
+
+
+
+@media screen and (min-width: 570px) {
+    .container {
+        display: grid;
+        grid-template-columns: 48% 48%;
+    }
+
+    .menu-card {
+        grid-column: 1 / span 2;
+
+        .card-report {
+            gap: 3rem;
+        }
+    }
+
+    .regular-card {
+        .property-card {
+            .row-2 {
+                flex-direction: column;
+                align-items: flex-start;
+
+                .hours {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+// MEDIA 1440
+
+
+@media screen and (min-width: 1440px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .container {
+        width: 77%;
+        //border: 1px solid red;
+        
+
+        display: grid;
+        //grid-template-columns: auto auto auto auto;
+        grid-template-columns: 23% 23% 23% 23%;
+
+        gap: 3rem;
+    }
+
+    .menu-card {
+        grid-row: 1 / span 2;
+        grid-column: unset;
+        height: 100%;
+        
+
+        .card-report{
+            flex-direction: column;
+            align-items: flex-start;
+            height: 70%;
+            padding: 3.4rem 3rem;
+
+            img {
+                width: 8.4rem;
+            }
+
+            .report {
+                margin-top: 2.2rem;
+                .name {
+                    font-size: 4rem;
+                }
+            }
+        }
+
+        .menu {
+            height: 30%;
+
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 2rem;
+
+            padding: 2.6rem 3.0rem;
+        }
+    }
+
+    .regular-card {
+
+        .property-card {
+            margin-top: 4.5rem;
+
+            .row-2 {
+                flex-direction: column;
+                align-items: flex-start;
+
+
+                .hours {
+                    font-size: 5.5rem;
+                    padding-top: 1.8rem;
+                }
+
+                .description {
+                    padding-top: 0.8rem;
+                }
+            }
+        }
+    }
+}
